@@ -15,33 +15,25 @@ public class MainApp {
             new AnnotationConfigApplicationContext(AppConfig.class);
 
       UserService userService = context.getBean(UserService.class);
-/*
-
-      userService.add(new User("User1", "Lastname1", "user1@mail.ru"));
-      userService.add(new User("User2", "Lastname2", "user2@mail.ru"));
-      userService.add(new User("User3", "Lastname3", "user3@mail.ru"));
-      userService.add(new User("User4", "Lastname4", "user4@mail.ru"));
-
-      Car car1 = new Car(1, "x5", new User("User11", "Lastname11", "user11@mail.ru"));
-      Car car2 = new Car(2, "x6", new User("User12", "Lastname12", "user12@mail.ru"));
-      Car car3 = new Car(3, "x7", new User("User13", "Lastname13", "user13@mail.ru"));
-
-      userService.add(new User("User7", "Lastname7", "user7@mail.ru", car1));
-      userService.add(new User("User5", "Lastname5", "user5@mail.ru", car2));
-      userService.add(new User("User6", "Lastname6", "user6@mail.ru", car3));
-*/
 
       Car car1 = new Car(1, "a");
-      User user1 = new User();
-      user1.setFirstName("evgeny");
-      user1.setLastName("yakovlev");
-      user1.setEmail("iakovlevjenya21@mail.ru");
+      User user1 = new User("evgeny", "yakovlev", "iakovlevjenya21@mail.ru");
       car1.setOwner(user1);
       user1.setCar(car1);
 
+      Car car2 = new Car(2, "b");
+      User user2 = new User("ivan", "ivanov", "jenya21@mail.ru");
+      car2.setOwner(user2);
+      user2.setCar(car2);
+
+      Car car3 = new Car(3, "c");
+      User user3 = new User("dsdsx", "saxasqsd", "iakovlev21@mail.ru");
+      car3.setOwner(user3);
+      user3.setCar(car3);
+
       userService.add(user1);
-
-
+      userService.add(user2);
+      userService.add(user3);
 
 
       List<User> users = userService.listUsers();

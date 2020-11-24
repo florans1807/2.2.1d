@@ -17,7 +17,6 @@ public class Car {
     private String model;
 
     @OneToOne(optional = false, mappedBy = "car")
-    //@JoinColumn(name = "owne_r")
     private User owner;
 
     public Car() {}
